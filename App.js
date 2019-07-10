@@ -1,7 +1,7 @@
 import React from 'react';
 import Main from './components/MainComponent';
 
-export default function App() {
+export default App = () => {
   return (
     <Main />
   );

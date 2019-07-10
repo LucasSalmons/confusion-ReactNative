@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Flatlist } from 'react-native';
+import { FlatList } from 'react-native';
 import { ListItem } from 'react-native-elements';
 
-function Menu(props) {
+const Menu = (props) => {
 
     const renderMenuItem = ({ item, index }) => {
 
@@ -11,17 +11,19 @@ function Menu(props) {
                 key={index}
                 title={item.name}
                 subtitle={item.description}
-                leftAvatar={{ source: require('./images/uthappiza.png') }}
+                onPress={() => props.onPress(item.id)}
+                leftAvatar={{ source: require('./images/uthappizza.png') }}
             />
         );
     };
 
     return (
-        <Flatlist
+        <FlatList
             data={props.dishes}
             renderItem={renderMenuItem}
             keyExtractor={item => item.id.toString()}
         />
     );
 }
+
 export default Menu;
