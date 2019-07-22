@@ -21,7 +21,7 @@ class Reservation extends Component {
 
     toggleModal() {
         this.setState(prevState => ({
-            showModal: !this.state.showModal
+            showModal: !prevState.showModal
         }));
     }
 
@@ -31,12 +31,12 @@ class Reservation extends Component {
     }
 
     resetForm() {
-        this.setState(prevState => ({
+        this.setState({
             guests: 1,
             smoking: false,
             date: '',
             showModal: false
-        }));
+        });
     }
 
     render() {
